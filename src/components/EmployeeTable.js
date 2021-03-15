@@ -1,9 +1,10 @@
 import React from "react";
-
-function EmployeeTable({ users }) {
+//Takes in employeeList from App.js
+function EmployeeTable({ employeeList }) {
   return (
     <div>
-        {users.map(({ picture, name, phone, email }) => {
+    {/* maps over all elements of the list, grabs and renders employee info */}
+        {employeeList.map(({ picture, name, phone, email }) => {
           return (
             <div>
               <img src={picture.medium} />

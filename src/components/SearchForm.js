@@ -1,5 +1,5 @@
 import React from "react";
-
+//search form runs the handleSearchChange function when its input form changes
 function SearchForm({ handleSearchChange }) {
   return (
     <div className="search">
