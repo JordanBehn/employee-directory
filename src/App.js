@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import API from "./utils/API";
 import SearchForm from "./components/SearchForm";
+import EmployeeTable from "./components/EmployeeTable"
 
 function App() {
   //set up useState variables
@@ -12,6 +13,7 @@ function App() {
     API.getRandomUsers().then((res) => {
       const randUsers = res.data.results;
       setEmployees([...randUsers]);
+      // setFilteredEmployees([...randUsers]);
     });
   }, []);
 
@@ -28,8 +30,9 @@ function App() {
 
   return (
     <div>
-      Hello
+      <h1>Employee Directory</h1>
       <SearchForm handleSearchChange={handleSearchChange} />
+      <EmployeeTable users={filteredEmployees}/>
     </div>
   );
 }
